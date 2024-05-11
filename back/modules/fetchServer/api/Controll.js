@@ -44,6 +44,10 @@ export default class Controll {
                         //data[i] = checkElement;
                     break;
 
+                    case 'File':
+                        data[i] = checkElement;
+                    break;
+
                     case 'DBRef':
                         data[i] = new DBRef(checkSchema.collection, new ObjectId(checkElement));
                     break;
