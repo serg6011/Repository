@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import fileUpload from 'express-fileupload';
 import FetchServer from './back/modules/fetchServer/index.js';
 import schema from './back/modules/fetchServer/schema/index.js';
 import { MongoClient, ObjectId } from 'mongodb';
@@ -10,12 +11,14 @@ const app = express();
 
 const PORT = 8000;
 
-app.use(morgan(':method :url :status :res[content-lenght] - :response-time ms'));
+//app.use(morgan(':method :url :status :res[content-lenght] - :response-time ms'));
 
 // Методы для работы от сервера с публичной частью
 //app.set('back', 'back');
 app.use(express.urlencoded({ extended: true }));
 //app.use(static(`back`));
+app.use(fileUpload({}));
+app.use(express.static('front/public/uploads'));
 
 app.use((req, res, next) => {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -32,11 +35,10 @@ app.get('/api/get/:CollectionName/', async (req, res) => {
     let options = {};
     let mdb = new FetchServer.MDB(collectionName);
 
-    console.log(collectionName, req.query);
     if(req.query) {
         options.filter = {};
         //get by id element
-        if(req.query.id) {
+        if(req.query.id && !req.query.set) {
             options.filter._id = new ObjectId(req.query.id);
         }
         
@@ -86,11 +88,21 @@ app.get('/api/get/schema/:Name/', async (req, res) => {
 app.post('/api/post/:CollectionName/', async (req, res) => {
     const collectionName = req.params.CollectionName.toLowerCase();
     let mdb = new FetchServer.MDB(collectionName);
+    let query = req.body;
 
-    const result = await mdb.setValue(req.body);
+    if(req.files) {
+        for(let i in req.files) {
+            let file = req.files[i];
+            let fileName = 'uploads/' + file.name;
+            file.mv('front/public/' + fileName);
+            query[i] = fileName;
+        }
+    }
+
+    const result = await mdb.setValue(query);
 
     if(result.acknowledged) {
-        let newUrl = config.client + collectionName + '?id=' + String(result.insertedId);
+        let newUrl = config.client + collectionName + '?id=' + String(result.insertedId) + '&set=Y';
         res.statusCode = 304;
         res.redirect(newUrl);
     }

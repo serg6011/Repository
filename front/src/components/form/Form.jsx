@@ -91,6 +91,11 @@ export default function Form({nameForm, arValue = {}}) {
                     newRow.field = 'date';
                 break;
 
+                case 'File':
+                    newRow.fieldType = 'file';
+                    newRow.field = 'file';
+                break;
+
                 case 'Hidden':
                 default:
                     newRow.fieldType = 'hidden';
@@ -124,6 +129,10 @@ export default function Form({nameForm, arValue = {}}) {
 
                             {
                                 item.field === 'select' && <select name={item.code}>{item.list}</select>
+                            }
+
+                            {
+                                item.field === 'file' && <input type='file' name={item.code}/>
                             }
 
                             {
@@ -215,7 +224,7 @@ export default function Form({nameForm, arValue = {}}) {
 
     return (
         
-        <form method="POST" action={url} onChange={checkRequired} className='editForm'>
+        <form method="POST" encType="multipart/form-data" action={url} onChange={checkRequired} className='editForm'>
             {renderForm(schema, formValue) }
 
             <button disabled={disabled && disabled}>
