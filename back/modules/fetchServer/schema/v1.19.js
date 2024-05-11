@@ -1,4 +1,4 @@
-const models = {
+const v119 = {
     _id: {},
     NAME: {
         type: 'String',
@@ -32,4 +32,4 @@ const models = {
        
     };
 
-    export default models;
+    export default v119;

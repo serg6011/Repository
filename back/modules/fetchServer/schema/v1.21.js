@@ -1,4 +1,4 @@
-const cards = {
+const v121 = {
     _id: {},
     NAME: {
         type: 'String',
@@ -28,8 +28,17 @@ const cards = {
         sort: true,
         editable: true,
         //list: []
+    },
+    
+    IMAGE: {
+        type: 'File',
+        require: true,
+        default: 'None',
+        loc: "картинка",
+        sort: true,
+        editable: true,
     } 
        
     };
 
-    export default cards;
+    export default v121;

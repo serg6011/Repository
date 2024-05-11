@@ -1,4 +1,4 @@
-const owners = {
+const v120 = {
     _id: {},
         NAME: {
             type: 'String',
@@ -31,4 +31,4 @@ const owners = {
         } 
     };
 
-    export default owners;
+    export default v120;
