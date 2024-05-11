@@ -1,22 +1,34 @@
 const models = {
     _id: {},
-    BRAND: {
-        type: 'DBRef',
+    NAME: {
+        type: 'String',
         require: true,
         default: 'None',
-        loc: "Бренд",
+        loc: "название",
         sort: true,
         editable: true,
-        collection: 'brands'
+        //list: []
     },
-        TITLE: {
-            type: 'String',
-            require: true,
-            default: 'None',
-            loc: "Название",
-            sort: true,
-            editable: true
-        },
+
+    BUD: {
+        type: 'String',
+        require: true,
+        default: 'None',
+        loc: "вид",
+        sort: true,
+        editable: true,
+        //list: []
+    },
+
+    OPISANUE: {
+        type: 'String',
+        require: true,
+        default: 'None',
+        loc: "описание",
+        sort: true,
+        editable: true,
+        //list: []
+    } 
        
     };
 

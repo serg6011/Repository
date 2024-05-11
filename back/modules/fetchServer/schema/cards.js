@@ -1,31 +1,34 @@
 const cards = {
     _id: {},
-    TITLE: { //goverment number
+    NAME: {
         type: 'String',
-            require: true,
-            default: 'None',
-            loc: "Гос. номер",
-            sort: true,
-            editable: true
-    },
-    MODEL: {
-        type: 'DBRef',
         require: true,
         default: 'None',
-        loc: "Модель",
+        loc: "название",
         sort: true,
         editable: true,
-        collection: 'models'
+        //list: []
     },
-    OWNER: {
-        type: 'DBRef',
+
+    BUD: {
+        type: 'String',
         require: true,
         default: 'None',
-        loc: "Владелец",
+        loc: "вид",
         sort: true,
         editable: true,
-        collection: 'owners'
-    }, 
+        //list: []
+    },
+
+    OPISANUE: {
+        type: 'String',
+        require: true,
+        default: 'None',
+        loc: "описание",
+        sort: true,
+        editable: true,
+        //list: []
+    } 
        
     };
 

@@ -1,30 +1,34 @@
 const owners = {
     _id: {},
-        TITLE: {
+        NAME: {
             type: 'String',
             require: true,
             default: 'None',
-            loc: "ФИО",
+            loc: "название",
             sort: true,
             editable: true,
             //list: []
         },
-        PHONE: {
-            type: 'Phone',
+
+        BUD: {
+            type: 'String',
             require: true,
             default: 'None',
-            loc: "Телефон",
+            loc: "вид",
             sort: true,
-            editable: true
+            editable: true,
+            //list: []
         },
-        EMAIL: {
-            type: 'Email',
-            require: false,
+
+        OPISANUE: {
+            type: 'String',
+            require: true,
             default: 'None',
-            loc: "E-mail",
+            loc: "описание",
             sort: true,
-            editable: true
-        },
+            editable: true,
+            //list: []
+        } 
     };
 
     export default owners;
