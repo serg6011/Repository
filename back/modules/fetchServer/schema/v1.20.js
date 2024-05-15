@@ -1,5 +1,4 @@
 const v120 = {
-    _id: {},
         NAME: {
             type: 'String',
             require: true,

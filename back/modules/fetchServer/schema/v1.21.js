@@ -1,5 +1,4 @@
 const v121 = {
-    _id: {},
     NAME: {
         type: 'String',
         require: true,
@@ -32,11 +31,12 @@ const v121 = {
     
     IMAGE: {
         type: 'File',
-        require: true,
+        default: "",
         default: 'None',
         loc: "картинка",
-        sort: true,
+        sort: false,
         editable: true,
+        filter: false,
     } 
        
     };
