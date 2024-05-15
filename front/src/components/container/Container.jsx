@@ -4,6 +4,7 @@ import Table from "../table/Table.jsx";
 import Index from "../index/Index.jsx";
 import './style.css';
 import Search from "../search/Search.jsx";
+import NewsList from "../news/NewsList.jsx";
 
 export default function Container({ curPath }) 
 {
@@ -35,6 +36,7 @@ export default function Container({ curPath })
             {collectionName && <Search onChange={handleSearch} nameCollection={collectionName} />}
             {collectionName && <Form arValue={row} nameForm={ collectionName }></Form>}
             {collectionName && <Table onChange={handle} nameTable={ collectionName } query={query}></Table>}
+            {collectionName && <NewsList collectionName={collectionName}></NewsList>}
             {!collectionName && <Index/>}
         </div>
     )
