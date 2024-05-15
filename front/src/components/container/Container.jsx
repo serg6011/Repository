@@ -11,6 +11,8 @@ export default function Container({ curPath })
     const [row, setRow] = useState({});
     const [query, setQuery] = useState('');
     const [collectionName, setCollectionName] = useState(false);
+    const params = (new URL(document.location)).searchParams;
+    const edit = params.get('edit');
 
     const handle = (value) => {
         if(value.data)
@@ -34,8 +36,14 @@ export default function Container({ curPath })
     return (
         <div className="container">
             {collectionName && <Search onChange={handleSearch} nameCollection={collectionName} />}
-            {collectionName && <Form arValue={row} nameForm={ collectionName }></Form>}
-            {collectionName && <Table onChange={handle} nameTable={ collectionName } query={query}></Table>}
+            {
+                edit === 'Y' && 
+                    <>
+                    {collectionName && <Form arValue={row} nameForm={ collectionName }></Form>}
+                    {collectionName && <Table onChange={handle} nameTable={ collectionName } query={query}></Table>}
+                    </>
+            }
+            
             {collectionName && <NewsList collectionName={collectionName}></NewsList>}
             {!collectionName && <Index/>}
         </div>
