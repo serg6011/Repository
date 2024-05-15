@@ -17,13 +17,13 @@ export default function NewsList({collectionName, limit, paginator = false}) {
 
     return (
         <>
-        <h2>Новости</h2>
+        <h2>Мобы</h2>
         <div className='news-list'>   
             {
                 news && news.map(el => (
                     <div className='news-card'>
                         <img src={'./' + el.IMAGE} alt={el.NAME} />
-                        <h3>{el.NAME}</h3>
+                        <h2>{el.NAME}</h2>
                         <span>{el.OPISANUE}</span>
                     </div>
                 ))

@@ -12,8 +12,9 @@
 }
 
 .news-list .news-card img {
-    width:100%;
     margin-bottom: 5px;
+    max-height: 160px;
+    max-width: 160px;
 }
 
 .news-list .news-card h3 {
