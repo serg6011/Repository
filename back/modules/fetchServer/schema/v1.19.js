@@ -27,6 +27,16 @@ const v119 = {
         sort: true,
         editable: true,
         //list: []
+    },
+    
+    IMAGE: {
+        type: 'File',
+        default: "",
+        default: 'None',
+        loc: "картинка",
+        sort: false,
+        editable: true,
+        filter: false,
     } 
        
     };

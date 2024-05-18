@@ -107,6 +107,7 @@ export default class MDB
                 }
             }
 
+            if(xor.length > 0 )
             filter = { 
                 $or: [...xor]
             }

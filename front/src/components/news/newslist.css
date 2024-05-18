@@ -9,6 +9,7 @@
     width:calc(33% - 30px);
     border:1px solid #eee;
     padding:10px;
+    background: #DEFADE ;
 }
 
 .news-list .news-card img {
