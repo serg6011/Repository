@@ -4,12 +4,24 @@ header {
     border-bottom: 1px solid #999;
     justify-content: space-between;
     padding:10px 30px;
+    height: 300px;
+    flex-wrap: wrap;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header .LogoGroup {
     display: flex;
-    width: 60px;
+    width: 140px;
     gap:15px;
+    position: absolute;
+    left:0;
+    right:0;
+    height: fit-content;
+    margin:auto;
+    top:30px;
 }
 
 header .LogoGroup h1 {
@@ -20,5 +32,44 @@ header .LogoGroup h1 {
 }
 
 header .LogoGroup img {
-    max-height: 40px;
+    
+}
+
+header .editMode {
+    display:flex;
+    font-size:10px;
+    cursor: pointer;
+}
+
+header .editMode span {
+    width: 40px;
+    height:20px;
+    display:block;
+    border-radius:10px;
+    background: #c49b9b;
+    position:relative;
+    transition: all .4s;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,.2);
+}
+
+header .editMode span:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 2px;
+    top: 2px;
+    background-color: aquamarine;
+    border-radius: 9px;
+    transition: all .4s;
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,.2);
+}
+
+header .editMode.true span {
+    background: green;
+}
+
+header .editMode.true span:before {
+    left:21px;
 }

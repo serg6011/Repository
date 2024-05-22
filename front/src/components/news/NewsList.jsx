@@ -25,6 +25,8 @@ export default function NewsList({collectionName, limit, paginator = false}) {
                         <img src={'./' + el.IMAGE} alt={el.NAME} />
                         <h2>{el.NAME}</h2>
                         <span>{el.OPISANUE}</span>
+                        {el.TROFY != '' && <span className='params'>Награда: <b>{el.TROFY}</b></span>}
+                        {el.CLASS != '' && <span className='params'>Класс: <b>{el.CLASS}</b></span>}
                     </div>
                 ))
             }

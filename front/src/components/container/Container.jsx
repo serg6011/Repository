@@ -6,13 +6,12 @@ import './style.css';
 import Search from "../search/Search.jsx";
 import NewsList from "../news/NewsList.jsx";
 
-export default function Container({ curPath }) 
+export default function Container({ curPath, edit }) 
 {
     const [row, setRow] = useState({});
     const [query, setQuery] = useState('');
     const [collectionName, setCollectionName] = useState(false);
     const params = (new URL(document.location)).searchParams;
-    const edit = params.get('edit');
 
     const handle = (value) => {
         if(value.data)
@@ -37,7 +36,7 @@ export default function Container({ curPath })
         <div className="container">
             {collectionName && <Search onChange={handleSearch} nameCollection={collectionName} />}
             {
-                edit === 'Y' && 
+                edit === true && 
                     <>
                     {collectionName && <Form arValue={row} nameForm={ collectionName }></Form>}
                     {collectionName && <Table onChange={handle} nameTable={ collectionName } query={query}></Table>}

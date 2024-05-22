@@ -1,44 +1,71 @@
 const v119 = {
     NAME: {
-        type: 'String',
+        type: "String",
         require: true,
-        default: 'None',
+        default: "None",
         loc: "название",
         sort: true,
         editable: true,
         //list: []
     },
-
-    BUD: {
-        type: 'String',
+    CATEGORY: {
+        type: "List",
         require: true,
-        default: 'None',
+        default: 0,
+        loc: "Категория",
+        list: ["Мобы", "Блоки"],
+        sort: false,
+        editable: true,
+        searchable: false,
+    },
+    BUD: {
+        type: "String",
+        require: true,
+        default: "None",
         loc: "вид",
         sort: true,
         editable: true,
         //list: []
     },
-
-    OPISANUE: {
-        type: 'String',
+    CLASS: {
+        type: "List",
         require: true,
-        default: 'None',
+        default: 0,
+        loc: "Класс",
+        list: ["Твердые", "Жидкие", 'Нетвердые', 'Плазменные'],
+        sort: false,
+        editable: true,
+        searchable: false,
+    },
+    TROFY: {
+        type: "List",
+        require: true,
+        default: 0,
+        loc: "Трофей",
+        list: ["Бронза", "Серебро", 'Золото', 'Платина'],
+        sort: false,
+        editable: true,
+        searchable: false,
+    },
+    OPISANUE: {
+        type: "String",
+        require: true,
+        default: "None",
         loc: "описание",
         sort: true,
         editable: true,
         //list: []
     },
-    
+
     IMAGE: {
-        type: 'File',
+        type: "File",
         default: "",
-        default: 'None',
+        default: "None",
         loc: "картинка",
         sort: false,
         editable: true,
         filter: false,
-    } 
-       
-    };
+    },
+};
 
-    export default v119;
+export default v119;

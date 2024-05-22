@@ -86,6 +86,12 @@ export default function Form({nameForm, arValue = {}}) {
                     newRow.list = renderSelect(newRow);
                 break;
 
+                case 'List':
+                    newRow.fieldType = 'select';
+                    newRow.field = 'simpleselect';
+                    newRow.list = renderSimpleSelect(newRow);
+                break;  
+
                 case 'Date':
                     newRow.fieldType = 'date';
                     newRow.field = 'date';
@@ -128,6 +134,18 @@ export default function Form({nameForm, arValue = {}}) {
                             }
 
                             {
+                                item.field === 'simpleselect' && (
+                                    <select name={item.code}>
+                                        {
+                                            item.list.map((item, index) => (
+                                                <option key={index} value={item}>{item}</option>
+                                            ))
+                                        }
+                                    </select>
+                                )
+                            }
+
+                            {
                                 item.field === 'select' && <select name={item.code}>{item.list}</select>
                             }
 
@@ -150,6 +168,10 @@ export default function Form({nameForm, arValue = {}}) {
                 }
             </>
         )
+    }
+
+    function renderSimpleSelect(row) {
+        return schema[row.code].list;
     }
 
     function callMethod(event) {

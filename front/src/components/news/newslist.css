@@ -1,6 +1,13 @@
+h2 {
+    display:block;
+    width:100%;
+}
+
 .news-list {
     display:flex;
     width:100%;
+    max-width:1200px;
+    margin:0 auto;
     flex-wrap:wrap;
     gap:15px;
 }
@@ -27,6 +34,12 @@
 .news-list .news-card span {
     font-size:14px;
     margin-top:5px;
+}
+
+.news-list .news-card span.params {
+    display:block;
+    margin:3px 0;
+    
 }
 /* 
 h3 {

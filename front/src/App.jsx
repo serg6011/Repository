@@ -11,6 +11,8 @@ function App() {
    * components: Header, Menu, ...
    */
   let [currentPath, setCurrentPath] = useState('/');
+  let [edit, setEdit] = useState(false);
+  let curEditMode = localStorage.getItem('edit') === 'true';
 
   const setPath = useCallback(async () => {
     let r = new Route();
@@ -21,11 +23,21 @@ function App() {
     () => {setPath()}, [setPath]
   )
 
+  if(curEditMode != true) {
+    toggleEdit();
+  }
+
+  function toggleEdit() {
+    let value = edit === true ? false : true;
+    localStorage.setItem('edit', value);
+    setEdit(value);
+  }
+
   return (
     <div className="App">
-      <Header curPath={currentPath}/>
+      <Header curPath={currentPath} editMode={toggleEdit} edit={edit}/>
 
-      <Container curPath={currentPath}></Container>
+      <Container curPath={currentPath} edit={edit}></Container>
     </div>
   );
 }

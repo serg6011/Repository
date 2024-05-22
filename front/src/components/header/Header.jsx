@@ -3,43 +3,28 @@ import Logo from '../../images/logo.png';
 import './style.css';
 import Menu from '../menu/Menu';
 import lang from './lang.js';
+import bg from './images/image.png';
 
-export default function Header({ curPath }) {
-    /**
-     * Правила работы с хуками
-     * 1. Нельзя писать вне компонента/класса
-     * 2. useState и useEffect всегда должны быть вне условия и на самом верху
-     */
-    const [now, setNow] = useState(new Date()); //0 - значение, 1 - функция коллбек, которая меняет это значение
-
+export default function Header({ curPath, editMode, edit }) {
     useEffect(
         () => {
-            //timer
-            const interval = setInterval(() => setNow(new Date()), 1000);
-
-            return () => {
-                clearInterval(interval);
-                console.log('clear time');
-            }
+            
         }, []
     )
 
     return (
         <>
-        <header>
+        <header style={{
+            backgroundImage: 'url(' + bg + ')'
+        }}>
             <div className='LogoGroup'>
-                <img src={Logo} width="40px" alt="" />
-                <h1>SPA</h1>
+                <img src={Logo} width="140px" alt="" />
             </div>
 
             <Menu curPath={curPath} />
 
-            <div className='timer'>{ now.toLocaleTimeString() }</div>
+            <div className={"editMode " + edit} onClick={editMode}><span></span></div>
         </header>
-        <h2>
-            {curPath != "" && lang[curPath]}
-            {curPath === "" && lang.index}
-        </h2>
         </>
     )
 }

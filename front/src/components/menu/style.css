@@ -3,10 +3,15 @@ menu {
     gap: 5px;
     text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size:12px;
+    font-size:16px;
     margin: 10px auto;
     padding:0;
-
+    position:absolute;
+    bottom:10px;
+    margin:0 auto;
+    width: fit-content;
+    left:0;
+    right:0;
 }
 
 menu li {
@@ -15,19 +20,22 @@ menu li {
     padding: 5px 10px;
     border-radius:4px;
     color: #fff;
+    background:rgba(0,0,0,.4);
     cursor: pointer;
+    font-weight: bold;;
 }
 
 menu li a {
-    color: black;
+    color: rgb(222, 222, 222);
+    
 }
 
 menu li:hover {
-    background-color: #1E88E5;
+    background-color: #7d9bee;
 }
 
 menu li.selected {
-    background: #333;
+    background: #5d3ac4;
 }
 
 menu li.selected a {
