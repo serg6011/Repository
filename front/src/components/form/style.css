@@ -3,8 +3,8 @@ form.editForm {
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    padding:20px;
-    background: #f3f3f3;
+    padding:6px;
+    background: #DDF9C8;
     border-radius:4px;
     max-width:300px;
     margin:20px;
@@ -12,10 +12,11 @@ form.editForm {
 }
 
 form.editForm label {
-    width:95%;
+    width:90%;
     justify-content: start;
     text-align: left;;
 }
+
 
 form.editForm label span {
     text-align:left;
@@ -32,7 +33,7 @@ form.editForm select {
     line-height:36px;
     height:36px;
     padding:0 12px;
-    background:#f3f3f3;
+    background:#CCF3AB;
     display:block;
 }
 
@@ -48,7 +49,7 @@ form.editForm select option {
 }
 
 form.editForm button {
-    background: #1976D2;
+    background: #88D939;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -58,7 +59,7 @@ form.editForm button {
 }
 
 form.editForm button:hover {
-    background: #1E88E5;
+    background: #AAE672;
 }
 
 form.editForm button:disabled {
