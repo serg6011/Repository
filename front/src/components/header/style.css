@@ -46,7 +46,7 @@ header .editMode span {
     height:20px;
     display:block;
     border-radius:10px;
-    background: #c49b9b;
+    background: #AAE672;
     position:relative;
     transition: all .4s;
     box-shadow: inset 2px 2px 4px rgba(0,0,0,.2);
@@ -60,7 +60,7 @@ header .editMode span:before {
     height: 17px;
     left: 2px;
     top: 2px;
-    background-color: aquamarine;
+    background-color: #66CC00;
     border-radius: 9px;
     transition: all .4s;
     box-shadow: inset -2px -2px 4px rgba(0,0,0,.2);

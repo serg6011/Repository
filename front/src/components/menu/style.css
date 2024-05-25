@@ -31,11 +31,11 @@ menu li a {
 }
 
 menu li:hover {
-    background-color: #7d9bee;
+    background-color: #66CC00;
 }
 
 menu li.selected {
-    background: #5d3ac4;
+    background: #88D939;
 }
 
 menu li.selected a {

@@ -18,16 +18,7 @@ const v121 = {
         editable: true,
         searchable: false,
     },
-    BUD: {
-        type: 'String',
-        require: true,
-        default: 'None',
-        loc: "вид",
-        sort: true,
-        editable: true,
-        //list: []
-    },
-
+    
     OPISANUE: {
         type: 'String',
         require: true,

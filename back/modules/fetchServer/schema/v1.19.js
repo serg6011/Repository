@@ -18,15 +18,7 @@ const v119 = {
         editable: true,
         searchable: false,
     },
-    BUD: {
-        type: "String",
-        require: true,
-        default: "None",
-        loc: "вид",
-        sort: true,
-        editable: true,
-        //list: []
-    },
+    
     CLASS: {
         type: "List",
         require: true,
