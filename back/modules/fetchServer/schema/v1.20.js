@@ -1,4 +1,14 @@
 const v120 = {
+    IMAGE: {
+        type: 'File',
+        default: "",
+        default: 'None',
+        loc: "картинка",
+        sort: false,
+        editable: true,
+        filter: false,
+    }, 
+    
     NAME: {
         type: 'String',
         require: true,
@@ -18,6 +28,7 @@ const v120 = {
         editable: true,
         searchable: false,
     },
+    
     OPISANUE: {
         type: 'String',
         require: true,
@@ -27,16 +38,24 @@ const v120 = {
         editable: true,
         //list: []
     },
-    
-    IMAGE: {
-        type: 'File',
-        default: "",
-        default: 'None',
-        loc: "картинка",
+    CLASS: {
+        type: "List",
+        require: true,
+        default: 0,
+        loc: "класс",
+        list: ["Дружелюбный моб", "Нейтральный моб", "Враждебный моб", "Приручаемый моб", "Твёрдый блок" , "Жидкий блок",  "Нетвёрдый блок", "Плазменный блок", "технический блок"],
         sort: false,
         editable: true,
-        filter: false,
-    } 
-       
+        searchable: false,
+    },
+    TROFY: {
+        type: 'String',
+        require: true,
+        default: 'None',
+        loc: "Награда",
+        sort: true,
+        editable: true,
+        //list: []
+    },
     };
     export default v120;

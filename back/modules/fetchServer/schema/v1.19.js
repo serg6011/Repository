@@ -1,8 +1,18 @@
 const v119 = {
+    IMAGE: {
+        type: 'File',
+        default: "",
+        default: 'None',
+        loc: "картинка",
+        sort: false,
+        editable: true,
+        filter: false,
+    }, 
+    
     NAME: {
-        type: "String",
+        type: 'String',
         require: true,
-        default: "None",
+        default: 'None',
         loc: "название",
         sort: true,
         editable: true,
@@ -19,45 +29,34 @@ const v119 = {
         searchable: false,
     },
     
-    CLASS: {
-        type: "List",
-        require: true,
-        default: 0,
-        loc: "Класс",
-        list: ["Твердые", "Жидкие", 'Нетвердые', 'Плазменные'],
-        sort: false,
-        editable: true,
-        searchable: false,
-    },
-    TROFY: {
-        type: "List",
-        require: true,
-        default: 0,
-        loc: "Трофей",
-        list: ["Бронза", "Серебро", 'Золото', 'Платина'],
-        sort: false,
-        editable: true,
-        searchable: false,
-    },
     OPISANUE: {
-        type: "String",
+        type: 'String',
         require: true,
-        default: "None",
+        default: 'None',
         loc: "описание",
         sort: true,
         editable: true,
         //list: []
     },
-
-    IMAGE: {
-        type: "File",
-        default: "",
-        default: "None",
-        loc: "картинка",
+    CLASS: {
+        type: "List",
+        require: true,
+        default: 0,
+        loc: "класс",
+        list: ["Дружелюбный моб", "Нейтральный моб", "Враждебный моб", "Приручаемый моб", "Твёрдый блок" , "Жидкий блок",  "Нетвёрдый блок", "Плазменный блок", "технический блок"],
         sort: false,
         editable: true,
-        filter: false,
+        searchable: false,
     },
-};
+    TROFY: {
+        type: 'String',
+        require: true,
+        default: 'None',
+        loc: "Награда",
+        sort: true,
+        editable: true,
+        //list: []
+    },
+    };
 
 export default v119;

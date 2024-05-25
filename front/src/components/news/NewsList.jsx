@@ -25,8 +25,6 @@ export default function NewsList({collectionName, limit, paginator = false}) {
             arElements[item.CATEGORY].push(item);
         });
 
-        console.log(arElements);
-
         return (
             <>
                 {

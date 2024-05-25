@@ -20,7 +20,7 @@ menu li {
     padding: 5px 10px;
     border-radius:4px;
     color: #fff;
-    background:rgba(0,0,0,.4);
+    background:rgba(0,0,0,.1);
     cursor: pointer;
     font-weight: bold;;
 }
