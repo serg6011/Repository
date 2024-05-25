@@ -5,7 +5,7 @@ import Controll from './Controll.js';
 export default class MDB
 {
     static #PORT = '27017';
-    static #LOCATION = 'mongodb://localhost';
+    static #LOCATION = 'mongodb://127.0.0.1';
     static #LOGIN;
     static #PSSWD;
     static #DBNAME = 'minecraft';
